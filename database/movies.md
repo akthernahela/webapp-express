@@ -2,7 +2,7 @@
 
 ## MOVIE
  - id
- - nome
+ - titolo
  - autore
  - produttore
  - attori
