@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "express": "^5.2.1",
+    "mysql2": "^3.15.3",
     "pkg": "^5.8.1"
   }
 }
