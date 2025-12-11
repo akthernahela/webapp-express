@@ -10,7 +10,8 @@ const index = (req, res) => {
 
 const show = (req, res) => {
     const id = Number(req.params.id);
-    const sqlBook = "SELECT * FROM books WHERE id = ?";
+    const sqlMovies = "SELECT * FROM movies WHERE id = ?";
+    const sqlReviews = "SELECT id, movie_id, name, vote, text FROM reviews WHERE movies_id = ? "
 }
 
 module.exports = { index, show }
