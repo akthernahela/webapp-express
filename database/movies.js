@@ -4,8 +4,6 @@ const movieRouter = require('../moviesRouter')
 
 router.get('/', movieRouter.index)
 
-router.get('/:id', (req, res) => {
-    res.send('Show the requested movie by id' + req.params.id)
-})
+router.get('/:id', movieRouter.show)
 
 module.exports = router

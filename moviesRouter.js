@@ -8,4 +8,9 @@ const index = (req, res) => {
     })
 }
 
-module.exports = { index }
+const show = (req, res) => {
+    const id = Number(req.params.id);
+    const sqlBook = "SELECT * FROM books WHERE id = ?";
+}
+
+module.exports = { index, show }
