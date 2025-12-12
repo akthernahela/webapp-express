@@ -5,9 +5,9 @@ const cors = require('cors')
 const notFound = require('./middlewares/notFound')
 const serverDown = require('./middlewares/serverDown')
 
-app.get('/', (res, req) =>
+app.get('/', (res, req) => {
     res.send('Movies Catalog')
-);
+});
 
 app.use(cors({ origin: 'http://localhost:5173' }));
 app.use(express.json());
