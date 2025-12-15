@@ -14,6 +14,7 @@ app.listen(PORT, () => {
 })
 
 app.use(express.json())
+app.use(express.static('public'))
 
 app.get('/', (req, res) => {
     res.send('My movie Catalog')
