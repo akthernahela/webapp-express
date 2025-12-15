@@ -12,7 +12,7 @@ const show = (req, res, next) => {
     const id = Number(req.params.id);
     const sqlMovies = "SELECT * FROM movies WHERE id = ?";
     const sqlReviews = "SELECT id, movie_id, name, vote, text FROM reviews WHERE movie_id = ?";
-    connection.query(sqlMovies, [id], (err, res, next) => {
+    connection.query(sqlMovies, [id], (err, movieResults) => {
         if (err) {
             console.error("Errore");
             return next(err);
@@ -27,14 +27,14 @@ const show = (req, res, next) => {
 
         const movie = movieResults[0];
 
-        connection.query(sqlReviews, [id], (errReviews) => {
+        connection.query(sqlReviews, [id], (errReviews, reviewsResults) => {
             if (errReviews) {
                 console.error("Errore recensione");
                 return next(errReviews);
             }
+            movie.reviews = reviewsResults;
+            res.status(200).json(movie);
         })
-        movie.reviews = reviewsResults;
-        res.status(200).json(movie);
     })
 }
 
