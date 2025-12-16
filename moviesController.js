@@ -41,6 +41,13 @@ const show = (req, res, next) => {
 const store = (req, res) => {
 
     const { movie_id, name, vote, text } = req.body;
+    if (!movie_id || !name || !vote) {
+        return res.status(400).json({
+            error: true,
+            message: 'Dati mancanti'
+        });
+    }
+
 
     console.log(req.body);
 };
