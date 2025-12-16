@@ -38,5 +38,11 @@ const show = (req, res, next) => {
     })
 }
 
+const store = (req, res) => {
+
+    const { movie_id, name, vote, text } = req.body;
+
+    console.log(req.body);
+};
 
 module.exports = { index, show }
