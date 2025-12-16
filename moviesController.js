@@ -48,8 +48,8 @@ const store = (req, res) => {
         });
     }
 
+    const sql = "INSERT INTO reviews (movie_id, name, vote, text) VALUES (?, ?, ?, ?)";
 
-    console.log(req.body);
 };
 
 module.exports = { index, show }
