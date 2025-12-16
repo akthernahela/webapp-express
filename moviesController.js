@@ -50,6 +50,19 @@ const store = (req, res) => {
 
     const sql = "INSERT INTO reviews (movie_id, name, vote, text) VALUES (?, ?, ?, ?)";
 
+    connection.query(
+        sql,
+        [movie_id, name, vote, text],
+        (err, result) => {
+            if (err) {
+                res.status(500).json({ message: 'Errore' });
+                return;
+            }
+
+            res.json({ message: 'Recensione salvata' });
+        }
+    );
+
 };
 
 module.exports = { index, show, store }
