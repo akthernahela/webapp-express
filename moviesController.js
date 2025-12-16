@@ -52,4 +52,4 @@ const store = (req, res) => {
 
 };
 
-module.exports = { index, show }
+module.exports = { index, show, store }
