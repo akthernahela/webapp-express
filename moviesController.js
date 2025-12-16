@@ -56,10 +56,15 @@ const store = (req, res) => {
         (err, result) => {
             if (err) {
                 res.status(500).json({ message: 'Errore' });
-                return;
             }
 
-            res.json({ message: 'Recensione salvata' });
+            res.status(201).json({
+                id: result.insertId,
+                movie_id,
+                name,
+                vote,
+                text
+            });
         }
     );
 
