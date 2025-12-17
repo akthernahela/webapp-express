@@ -21,3 +21,4 @@ app.get('/', (req, res) => {
 })
 
 app.use('/api/movies', moviesRouter)
+app.use('api/reviews', moviesRouter)
